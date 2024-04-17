@@ -1,0 +1,71 @@
+{
+  "name": "cfx-cli",
+  "version": "0.0.4",
+  "description": "",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": "git://github.com/BigBoyLeft/cfx-cli.git",
+  "license": "ISC",
+  "author": {
+    "name": "BigBoyLeft",
+    "url": "https://github.com/BigBoyLeft"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "cfx.re",
+    "fivem",
+    "redm"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.js"
+    }
+  },
+  "bin": "./dist/index.js",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "clean": "rimraf dist",
+    "start": "node dist/index.js",
+    "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
+    "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache",
+    "prepare": "husky || true",
+    "typecheck": "tsc --noEmit",
+    "version": "changeset version",
+    "release": "changeset publish",
+    "version:dev": "changeset version --snapshot dev",
+    "release:dev": "changeset publish --tag dev"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "^0.5.0",
+    "@changesets/cli": "^2.27.1",
+    "@commitlint/cli": "^19.2.2",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^20.12.7",
+    "@types/prompts": "^2.4.9",
+    "@typescript-eslint/parser": "^7.7.0",
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "husky": "^9.0.11",
+    "prettier": "3.2.5",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.0.0",
+    "fs-extra": "^11.2.0",
+    "ora": "^8.0.1",
+    "prompts": "^2.4.2",
+    "type-fest": "^4.15.0",
+    "zod": "^3.22.4"
+  }
+}
